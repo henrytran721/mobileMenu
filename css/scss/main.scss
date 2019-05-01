@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,600');
+
+$colors: (
+  blue: #4285F4,
+  green: #0F9D58,
+  headerGray: #E5E5E5,
+  borderGray: #DEDEDE,
+  white: #fff,
+);
+$padding: 20px;
+
+@function backgroundColor($color) {
+  @return map-get($colors, $color);
+}
+
+@mixin fontFamily {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+
+@mixin menuBars {
+  width: 30px;
+  height: 3px;
+  background-color: backgroundColor(white);
+  margin-bottom: 5px;
+}
+
+@mixin header {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2em;
+  color: backgroundColor(blue);
+  padding: $padding;
+  text-decoration: none;
+}
+@mixin borderBottom {
+  border-bottom: 1px solid backgroundColor(borderGray);
+}
+@mixin textSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: $padding;
+  color: darken(backgroundColor(headerGray), 40%);
+}
+
+html, body, h1 {
+  margin: 0;
+}
+
+.nav {
+  width: 100%;
+  height: 100px;
+  background-color: backgroundColor(blue);
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  .menuIcon{
+    padding: 20px;
+    cursor: pointer;
+    .bar1, .bar2, .bar3 {
+      @include menuBars;
+    }
+  }
+
+  .google {
+    padding: $padding;
+    @include fontFamily;
+    font-weight: bold;
+    margin-left: 20%;
+  }
+
+  .translate {
+    @include fontFamily;
+    font-weight: lighter;
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100%;
+  width: 0;
+  background: backgroundColor(white);
+  border: 1px solid backgroundColor(borderGray);
+  transition: width 1s ease-in-out;
+  overflow-x: hidden;
+  white-space: nowrap;
+  font-family: "Montserrat", sans-serif;
+
+  .header {
+    width: 100%;
+    height: 100px;
+    background-color: backgroundColor(headerGray);
+    position: relative;
+    display: grid;
+    grid-template-columns: 70% auto;
+
+    .headerText {
+      float: left;
+      text-align: center;
+      align-self: center;
+      font-weight: bold;
+      @include header;
+    }
+
+    .closeBtn {
+      justify-self: flex-end;
+      @include header;
+    }
+  }
+}
+
+.googleTranslate {
+  display: flex;
+  justify-content: center;
+  @include borderBottom;
+
+  .googleMenu {
+    padding: $padding;
+    padding-right: $padding / 2;
+    color: backgroundColor(green);
+  }
+  .translateMenu {
+    padding: $padding;
+    padding-left: 0;
+    font-weight: lighter;
+    color: darken(backgroundColor(headerGray), 40%);
+  }
+}
+
+.aboutGT {
+  @include textSection;
+  @include borderBottom;
+  h2 {
+    padding: $padding;
+    padding-bottom: 0;
+  }
+}
+
+.classic {
+  @include textSection;
+  @include borderBottom;
+  h2 {
+    padding: $padding;
+  }
+}
+
+.lastSection {
+  @include textSection;
+  h2 {
+    padding: $padding;
+    padding-bottom: 0;
+  }
+}

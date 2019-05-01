@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,600");
+html, body, h1 {
+  margin: 0; }
+
+.nav {
+  width: 100%;
+  height: 100px;
+  background-color: #4285F4;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1; }
+  .nav .menuIcon {
+    padding: 20px;
+    cursor: pointer; }
+    .nav .menuIcon .bar1, .nav .menuIcon .bar2, .nav .menuIcon .bar3 {
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      margin-bottom: 5px; }
+  .nav .google {
+    padding: 20px;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-weight: bold;
+    margin-left: 20%; }
+  .nav .translate {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-weight: lighter; }
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100%;
+  width: 0;
+  background: #fff;
+  border: 1px solid #DEDEDE;
+  transition: width 1s ease-in-out;
+  overflow-x: hidden;
+  white-space: nowrap;
+  font-family: "Montserrat", sans-serif; }
+  .menu .header {
+    width: 100%;
+    height: 100px;
+    background-color: #E5E5E5;
+    position: relative;
+    display: grid;
+    grid-template-columns: 70% auto; }
+    .menu .header .headerText {
+      float: left;
+      text-align: center;
+      align-self: center;
+      font-weight: bold;
+      font-family: "Montserrat", sans-serif;
+      font-size: 2em;
+      color: #4285F4;
+      padding: 20px;
+      text-decoration: none; }
+    .menu .header .closeBtn {
+      justify-self: flex-end;
+      font-family: "Montserrat", sans-serif;
+      font-size: 2em;
+      color: #4285F4;
+      padding: 20px;
+      text-decoration: none; }
+
+.googleTranslate {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #DEDEDE; }
+  .googleTranslate .googleMenu {
+    padding: 20px;
+    padding-right: 10px;
+    color: #0F9D58; }
+  .googleTranslate .translateMenu {
+    padding: 20px;
+    padding-left: 0;
+    font-weight: lighter;
+    color: #7f7f7f; }
+
+.aboutGT {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  color: #7f7f7f;
+  border-bottom: 1px solid #DEDEDE; }
+  .aboutGT h2 {
+    padding: 20px;
+    padding-bottom: 0; }
+
+.classic {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  color: #7f7f7f;
+  border-bottom: 1px solid #DEDEDE; }
+  .classic h2 {
+    padding: 20px; }
+
+.lastSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  color: #7f7f7f; }
+  .lastSection h2 {
+    padding: 20px;
+    padding-bottom: 0; }
+
+/*# sourceMappingURL=main.css.map */
